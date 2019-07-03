@@ -54,15 +54,14 @@ class AddContact extends Component {
                     value={name}
                     onChange={this.onChange}
                   />
-
                   <TextInputGroup
                     label="Email"
                     name="email"
+                    type="email"
                     placeholder="Enter E-Mail"
                     value={email}
                     onChange={this.onChange}
                   />
-
                   <TextInputGroup
                     label="Phone Number"
                     name="phone"
