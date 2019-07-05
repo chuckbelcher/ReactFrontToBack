@@ -19,13 +19,11 @@ class AddContact extends Component {
     //Check fields to ensure that they are populated
     if (name === '') {
       this.setState({ errors: { name: 'Name is a required field' } });
-      console.log(this.state);
       return;
     }
 
     if (phone === '') {
       this.setState({ errors: { phone: 'Phone is a required field' } });
-      console.log(this.state);
       return;
     }
 
@@ -36,6 +34,8 @@ class AddContact extends Component {
       phone
     };
 
+    dispatch({ type: 'ADD_CONTACT', payload: newContact });
+
     //Clear state to clear form elements after submission
     this.setState({
       name: '',
@@ -44,7 +44,7 @@ class AddContact extends Component {
       errors: ''
     });
 
-    dispatch({ type: 'ADD_CONTACT', payload: newContact });
+    this.props.history.push('/');
   };
 
   onChange = e => {
