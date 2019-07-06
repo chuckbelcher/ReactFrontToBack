@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Consumer } from "../../context";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Consumer } from '../../context';
 
 class Contact extends Component {
   state = { showContactInfo: false };
@@ -11,17 +11,16 @@ class Contact extends Component {
 
   onShowClick = e => {
     //showContactInfo = !showContactInfo;
-    console.log(e, this.state);
     this.setState({ showContactInfo: !this.state.showContactInfo });
   };
 
   onDeleteClick = (id, dispatch) => {
-    console.log("delete this", { id });
-    dispatch({ type: "DELETE_CONTACT", payload: id });
+    console.log('delete this', { id });
+    dispatch({ type: 'DELETE_CONTACT', payload: id });
   };
 
   render() {
-    const { id, name, email, phone } = this.props.contact;
+    const { id, name, email, phone, website } = this.props.contact;
     const { showContactInfo } = this.state;
     return (
       <Consumer>
@@ -30,22 +29,23 @@ class Contact extends Component {
           return (
             <div className="card card-body mb-3">
               <h4>
-                {name}{" "}
+                {name}{' '}
                 <i
                   onClick={this.onShowClick.bind(this, { id })}
                   className="fas fa-sort-down"
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: 'pointer' }}
                 />
                 <i
                   onClick={this.onDeleteClick.bind(this, id, dispatch)}
                   className="fas fa-times"
-                  style={{ cursor: "pointer", float: "right", color: "red" }}
+                  style={{ cursor: 'pointer', float: 'right', color: 'red' }}
                 />
               </h4>
               {showContactInfo ? (
                 <ul className="list-group">
                   <li className="list-group-item">Email: {email}</li>
                   <li className="list-group-item">Phone: {phone} </li>
+                  <li className="list-group-item">Website: {website} </li>
                 </ul>
               ) : null}
             </div>

@@ -1,18 +1,19 @@
 //Provider / Store for state
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import axios from 'axios';
 
 const Context = React.createContext();
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "DELETE_CONTACT":
+    case 'DELETE_CONTACT':
       return {
         ...state,
         contacts: state.contacts.filter(
           contact => contact.id !== action.payload
         )
       };
-    case "ADD_CONTACT":
+    case 'ADD_CONTACT':
       return {
         ...state,
         contacts: [action.payload, ...state.contacts]
@@ -24,30 +25,19 @@ const reducer = (state, action) => {
 
 export class Provider extends Component {
   state = {
-    contacts: [
-      {
-        id: 1,
-        name: "Chuck Belcher",
-        email: "cfbelcher@pateogroup.com",
-        phone: "410-709-8292"
-      },
-      {
-        id: 2,
-        name: "Christina Belcher",
-        email: "christinabelcher@sudzypets.com",
-        phone: "443-721-9156"
-      },
-      {
-        id: 3,
-        name: "John Francis",
-        email: "johnfrancis@sudzypets.com",
-        phone: "410-709-5592"
-      }
-    ],
+    contacts: [],
     dispatch: action => {
       this.setState(state => reducer(state, action));
     }
   };
+
+  componentDidMount() {
+    axios.get('https://jsonplaceholder.typicode.com/users').then(res =>
+      this.setState({
+        contacts: res.data
+      })
+    );
+  }
 
   render() {
     return (

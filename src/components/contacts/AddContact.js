@@ -8,13 +8,14 @@ class AddContact extends Component {
     name: '',
     email: '',
     phone: '',
+    website: '',
     errors: {}
   };
 
   onSubmit = (dispatch, e) => {
     e.preventDefault();
 
-    const { name, email, phone } = this.state;
+    const { name, email, phone, website } = this.state;
 
     //Check fields to ensure that they are populated
     if (name === '') {
@@ -31,7 +32,8 @@ class AddContact extends Component {
       id: uuid(),
       name,
       email,
-      phone
+      phone,
+      website
     };
 
     dispatch({ type: 'ADD_CONTACT', payload: newContact });
@@ -41,7 +43,8 @@ class AddContact extends Component {
       name: '',
       email: '',
       phone: '',
-      errors: ''
+      errors: '',
+      website: ''
     });
 
     this.props.history.push('/');
@@ -52,7 +55,7 @@ class AddContact extends Component {
   };
 
   render() {
-    const { name, email, phone, errors } = this.state;
+    const { name, email, phone, website, errors } = this.state;
 
     return (
       <Consumer>
@@ -87,6 +90,13 @@ class AddContact extends Component {
                     value={phone}
                     onChange={this.onChange}
                     error={errors.phone}
+                  />
+                  <TextInputGroup
+                    label="Website"
+                    name="website"
+                    placeholder="Enter Website"
+                    value={website}
+                    onChange={this.onChange}
                   />
                   <input
                     type="submit"
