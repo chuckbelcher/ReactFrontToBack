@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/ReactFrontToBack/static/css/main.65938976.chunk.css",
+    "main.js": "/ReactFrontToBack/static/js/main.75e166e6.chunk.js",
+    "main.js.map": "/ReactFrontToBack/static/js/main.75e166e6.chunk.js.map",
+    "runtime~main.js": "/ReactFrontToBack/static/js/runtime~main.3959d26b.js",
+    "runtime~main.js.map": "/ReactFrontToBack/static/js/runtime~main.3959d26b.js.map",
+    "static/css/2.186dadd3.chunk.css": "/ReactFrontToBack/static/css/2.186dadd3.chunk.css",
+    "static/js/2.494e0da4.chunk.js": "/ReactFrontToBack/static/js/2.494e0da4.chunk.js",
+    "static/js/2.494e0da4.chunk.js.map": "/ReactFrontToBack/static/js/2.494e0da4.chunk.js.map",
+    "index.html": "/ReactFrontToBack/index.html",
+    "precache-manifest.ecd83f1028165c85ca99ff53fc30263d.js": "/ReactFrontToBack/precache-manifest.ecd83f1028165c85ca99ff53fc30263d.js",
+    "service-worker.js": "/ReactFrontToBack/service-worker.js",
+    "static/css/2.186dadd3.chunk.css.map": "/ReactFrontToBack/static/css/2.186dadd3.chunk.css.map",
+    "static/css/main.65938976.chunk.css.map": "/ReactFrontToBack/static/css/main.65938976.chunk.css.map",
+    "static/media/all.css": "/ReactFrontToBack/static/media/fa-solid-900.ef3df984.eot"
+  }
+}
